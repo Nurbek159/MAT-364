@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if success %}
+        <h1>Account Recovery Successful</h1>
+        <h2>You can now reset your password or 2FA</h2>
+        <div style="background-color: #d1fae5; color: #065f46; padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+            <p style="margin: 0;">✅ Recovery code verified successfully!</p>
+        </div>
+        <div style="background-color: #f3f4f6; padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+            <p style="margin: 0 0 10px 0; font-weight: bold;">Recovery Link:</p>
+            <a href="{{ reset_link }}" style="color: #3b82f6; text-decoration: underline; word-break: break-all;">{{ reset_link }}</a>
+        </div>
+        <p style="margin-top: 20px;">
+            <a href="{{ reset_link }}" style="display: inline-block; padding: 12px 24px; background-color: #3b82f6; color: white; text-decoration: none; border-radius: 8px;">
+                Continue to Reset Options →
+            </a>
+        </p>
+    {% else %}
+        <h1>Recovery Failed</h1>
+        <h2>Invalid username or recovery code</h2>
+        <div style="background-color: #fee2e2; color: #dc2626; padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+            <p style="margin: 0;">The provided recovery code is invalid or the username doesn't exist.</p>
+        </div>
+        <p style="margin-top: 20px;">
+            <a href="/account-recovery" style="display: inline-block; padding: 12px 24px; background-color: #3b82f6; color: white; text-decoration: none; border-radius: 8px;">
+                Try Again
+            </a>
+        </p>
+    {% endif %}
+    <p style="margin-top: 20px; font-size: 14px; color: #94a3b8;">
+        <a href="/login">Back to login</a>
+    </p>
+{% endblock %}
+
