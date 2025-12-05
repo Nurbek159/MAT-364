@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Verify Setup</h1>
+    <h2>Enter the 6-digit code from app</h2>
+    <form method="post">
+        <input type="hidden" name="username" value="{{ username }}">
+        <input type="text" name="otp_code" placeholder="123 456" required style="text-align: center; letter-spacing: 5px; font-size: 20px;">
+        <input type="submit" value="Finish Setup">
+    </form>
+{% endblock %}

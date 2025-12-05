@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Two-Factor Auth</h1>
+    <h2>Enter the code from your device</h2>
+    
+    <form action="/login/2fa" method="post">
+        <input type="text" name="otp_code" placeholder="000 000" required 
+               style="text-align: center; font-size: 24px; letter-spacing: 8px; color: #3b82f6;">
+        <input type="submit" value="Verify Identity">
+    </form>
+    
+    <div style="margin-top: 20px; font-size: 12px; color: #64748b;">
+        Session Protected by RSA-2048 & TLS
+    </div>
+{% endblock %}

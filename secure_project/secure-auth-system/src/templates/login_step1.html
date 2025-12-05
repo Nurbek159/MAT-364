@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome Back</h1>
+    <h2>Sign in to continue</h2>
+    <form method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Next Step →">
+    </form>
+    <p style="margin-top: 20px; font-size: 14px; color: #94a3b8;">
+        New here? <a href="/register">Create account</a>
+    </p>
+{% endblock %}

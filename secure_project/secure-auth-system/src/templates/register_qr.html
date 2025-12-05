@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Setup 2FA</h1>
+    <h2>Scan this with Google Authenticator</h2>
+    
+    <div class="qr-container">
+        <img src="data:image/png;base64,{{ img_data }}" width="150" />
+    </div>
+    
+    <p style="color: #94a3b8; font-size: 12px; margin-bottom: 20px;">
+        Secret: {{ secret }}
+    </p>
+
+    <form action="/register/verify_setup" method="GET">
+        <input type="hidden" name="username" value="{{ username }}">
+        <button type="submit">I have scanned it →</button>
+    </form>
+{% endblock %}
